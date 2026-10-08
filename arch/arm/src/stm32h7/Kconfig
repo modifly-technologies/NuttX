@@ -1251,6 +1251,13 @@ endif # STM32H7_USART1
 
 if STM32H7_USART2
 
+config USART2_TXDMA
+	bool "USART2 Tx DMA"
+	default n
+	depends on STM32H7_USART2 && STM32H7_DMA1
+	---help---
+		In high data rate usage, Tx DMA may reduce CPU load.
+
 config USART2_RS485
 	bool "RS-485 on USART2"
 	default n
@@ -1365,6 +1372,13 @@ endif # STM32H7_UART4
 
 if STM32H7_UART5
 
+config UART5_TXDMA
+	bool "UART5 Tx DMA"
+	default n
+	depends on STM32H7_UART5 && STM32H7_DMA1
+	---help---
+		In high data rate usage, Tx DMA may reduce CPU load.
+
 config UART5_RS485
 	bool "RS-485 on UART5"
 	default n
@@ -1440,6 +1454,13 @@ config USART6_RXFIFO_THRES
 endif # STM32H7_USART
 
 if STM32H7_UART7
+
+config UART7_TXDMA
+	bool "UART7 Tx DMA"
+	default n
+	depends on STM32H7_UART7 && STM32H7_DMA1
+	---help---
+		In high data rate usage, Tx DMA may reduce CPU load.
 
 config UART7_RS485
 	bool "RS-485 on UART7"
